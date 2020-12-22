@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Minigame</title>
+    <style>
+        div{
+			Color:white;
+			Background-color:Black;
+			Padding: 10px;
+			border:solid white 1px;
+			width: 100px;
+			height: 100px;
+			float: left;
+			text-align:center;
+        }
+        div.first {
+            clear:left;
+
+        }
+		div1{
+			Color:black;
+			Background-color:red;
+			height: 40px;
+			width: 100px;
+			Padding: 10px;
+			border:solid white 1px;
+			float:left;
+			text-align:center;
+		}
+		div1.first {
+            clear:left;
+
+        } 
+    </style>
+</head>
+<body>
+    <h1>Minigame</h1>
+
+
+	<div id="r1k1" class="first" onclick="tapp(this, 'r1k2','r1k2','r2k1','r2k1');">1</div>
+	<div id="r1k2" onclick="tapp(this, 'r1k1','r1k3','r2k2','r2k2');">2</div>
+	<div id="r1k3" onclick="tapp(this, 'r1k2','r1k2','r2k3','r2k3');">3</div>
+	
+	<div id="r2k1" class="first" onclick="tapp(this, 'r1k1','r3k1','r2k2','r2k2');">4</div>
+	<div id="r2k2" onclick="tapp(this, 'r1k2','r2k1','r2k3','r3k2');">5</div>
+	<div id="r2k3" onclick="tapp(this, 'r2k2','r1k3','r3k3','r3k3');">6</div>
+	
+	<div id="r3k1" class="first" onclick="tapp(this, 'r3k2','r3k2','r2k1','r2k1');">7</div>
+	<div id="r3k2" onclick="tapp(this, 'r2k2','r3k1','r3k3','r3k3');">8</div>
+	<div id="r3k3" onclick="tapp(this, 'r3k2','r3k2','r2k3','r2k3');"></div>
+
+	<div1 id="rand1" class="first" onclick="random_push()">Randomize(1)</div1>
+	<div1 id="rand1" onclick="random()">Randomize(100)</div1>
+	<div1 id="rand1" onclick="solve()">Solve</div1>
+	<!-- div1 id="rand1" onclick="solve()">Solve</div1> -->
+	
+    <Script>
+       
+        function tapp(tag, alt1, alt2, alt3, alt4) {
+            if (document.getElementById(alt1).innerHTML == '') {
+                document.getElementById(alt1).innerHTML = tag.innerHTML;
+                tag.innerHTML = '';
+            }
+            else if (document.getElementById(alt2).innerHTML == '') {
+                document.getElementById(alt2).innerHTML = tag.innerHTML;
+                tag.innerHTML = '';
+            }
+            else if (document.getElementById(alt3).innerHTML == '') {
+                document.getElementById(alt3).innerHTML = tag.innerHTML;
+                tag.innerHTML = '';
+            }
+            else if (document.getElementById(alt4).innerHTML == '') {
+                document.getElementById(alt4).innerHTML = tag.innerHTML;
+                tag.innerHTML = '';
+			}  
+        }
+        function random_push()
+		{
+		   // Eksempel :_ document.getElementById("rand1").innerHTML = "One";
+		   /* Eller : document.getElementById("rand1").innerHTML = "One"; */
+
+		}
+		
+
+
+    </Script>
+
+</body>
+</html>
