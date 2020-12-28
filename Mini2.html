@@ -62,28 +62,25 @@
 
 	<div1 id="rand1" class="first" onclick="random_push()">Randomize(1)</div1>
 	<div1 id="rand100" onclick="random()">Randomize(100)</div1>
-	<div1 id="solve" onclick="solve()">Solve</div1>	
+	<div1 id="solve" onclick="solve()">Solve</div1>
+	<!-- div1 id="rand1" onclick="solve()">Solve</div1> -->
 	
 	<info_box id="info" />
 	
     <Script>
        
-	    var info_count=1;
-		var info_list= [];
+	    var use_info=1;
 		
 		function info(txt) {
-		       if (info_count) {  // ignore if info_count equals to 0
-					if (info_list.length>10) {
-					 	info_list.shift();
-					}					
-					info_list.push(info_count + ":" + txt);
-					info_count +=1;					
-					document.getElementById("info").innerHTML=info_list.join("<br>");					
+		       if (use_info == 1) {
+					var text=document.getElementById("info").innerHTML;
+					text = text + txt;
+					document.getElementById("info").innerHTML=text;
 				}
         }
 		
         function tapp(tag, alt1, alt2, alt3, alt4) {
-			info("tapp(tag,"+alt1+","+alt2+","+alt3+","+alt4+")"); 
+			info("<br>tapp(tag,"+alt1+","+alt2+","+alt3+","+alt4+")"); 
             if (document.getElementById(alt1).innerHTML == '') {
                 document.getElementById(alt1).innerHTML = tag.innerHTML;
                 tag.innerHTML = '';
@@ -104,16 +101,29 @@
 		
 		
 		
-        function random_push() // Finds the blank and randomly push around it
+        function random_push() // Randomly push one of the 9 boxses
 		{
 			var knapp=["r1k1","r1k2","r1k3","r2k1","r2k2","r2k3","r3k1","r3k2","r3k3"];				
 			
 			var j=Math.floor(Math.random() * 9);
-			info("Random Push #" + j + " = " + knapp[j]);
+			info("<br>Random Push #" + j + " = " + knapp[j]);
 
 			
-		   var knappElement=document.getElementById(knapp[j]);
+			var knappElement=document.getElementById(knapp[j]);
 		   
+			
+		}
+		function answear{ //taking from tapp/tag then write the if setting that if all the numbers are in correct possision it vil be noted as correct.
+			if (getElementById(r1k1).innerHTML=='1')
+			(getElementById(r1k2).innerHTML=='2')
+			(getElementById(r1k3).innerHTML=='3')
+			(getElementById(r2k1).innerHTML=='4')
+			(getElementById(r2k2).innerHTML=='5')
+			(getElementById(r2k3).innerHTML=='6')
+			(getElementById(r3k1).innerHTML=='7')
+			(getElementById(r3k2).innerHTML=='8')
+			(getElementById(r3k3).innerHTML=='')
+			
 		}
 		
 
